@@ -1,21 +1,21 @@
 MODULE TPA
 IMPLICIT NONE
-REAL(kind=8)::Rp !Ä¸ºË°ë¾¶
-REAL(kind=8)::VN,VC,Vl  !ºËÊÆ¡£¿âÂ×ÊÆ£¬ÀëĞÄÊÆ
-REAL(kind=8)::V0  !V0=192.42 V0=194.37 !ÊÆ¾®Éî¶È
-REAL(kind=8),PARAMETER::a0=0.5958  !ºËÊÆÀ©É¢¶È a0=0.5958 a0=0.5966
-REAL(kind=8)::Ap,Zp,Np !Ä¸ºËÖÊÁ¿Êı£¬ÖÊ×ÓÊı£¬ÖĞ×ÓÊı
-REAL(kind=8)::Ad,Zd,Nd !×ÓºËÖÊÁ¿Êı£¬ÖÊ×ÓÊı£¬ÖĞ×ÓÊı
-REAL(kind=8)::Ma=4d0,Za=2d0  !alphaÁ£×ÓµÄÖÊÁ¿ÊıºÍÖÊ×ÓÊı
-REAL(kind=8)::L !¹ìµÀ½Ç¶¯Á¿
-REAL(kind=8)::u  !Ô¼»¯ÖÊÁ¿
-REAL(kind=8)::Qa  !Ë¥±äÄÜ
+REAL(kind=8)::Rp !æ¯æ ¸åŠå¾„
+REAL(kind=8)::VN,VC,Vl  !æ ¸åŠ¿ã€‚åº“ä¼¦åŠ¿ï¼Œç¦»å¿ƒåŠ¿
+REAL(kind=8)::V0  !V0=192.42 V0=194.37 !åŠ¿äº•æ·±åº¦
+REAL(kind=8),PARAMETER::a0=0.5958  !æ ¸åŠ¿æ‰©æ•£åº¦ a0=0.5958 a0=0.5966
+REAL(kind=8)::Ap,Zp,Np !æ¯æ ¸è´¨é‡æ•°ï¼Œè´¨å­æ•°ï¼Œä¸­å­æ•°
+REAL(kind=8)::Ad,Zd,Nd !å­æ ¸è´¨é‡æ•°ï¼Œè´¨å­æ•°ï¼Œä¸­å­æ•°
+REAL(kind=8)::Ma=4d0,Za=2d0  !alphaç²’å­çš„è´¨é‡æ•°å’Œè´¨å­æ•°
+REAL(kind=8)::L !è½¨é“è§’åŠ¨é‡
+REAL(kind=8)::u  !çº¦åŒ–è´¨é‡
+REAL(kind=8)::Qa  !è¡°å˜èƒ½
 REAL(kind=8)::GAma
-REAL(kind=8),PARAMETER::ee=1.4399652                    !²ÎÊı
-REAL(kind=8),PARAMETER::h=4.135667E-21                  !ÆÕÀÊ¿Ë³£Á¿Mev    C2_hpi2=38991.855
-REAL(kind=8),PARAMETER::hbar=6.58211889E-22             !Ô¼»¯ÆÕÀÊ¿Ë³£Á¿Mev
-REAL(kind=8),PARAMETER::c=3.0E23                        !¹âËÙ fm/s
-REAL(kind=8)::R1,R2,R3									!!!!¾­µä×ªÕÛµãR1¡¢R2¡¢R3
+REAL(kind=8),PARAMETER::ee=1.4399652                    !å‚æ•°
+REAL(kind=8),PARAMETER::h=4.135667E-21                  !æ™®æœ—å…‹å¸¸é‡Mev    C2_hpi2=38991.855
+REAL(kind=8),PARAMETER::hbar=6.58211889E-22             !çº¦åŒ–æ™®æœ—å…‹å¸¸é‡Mev
+REAL(kind=8),PARAMETER::c=3.0E23                        !å…‰é€Ÿ fm/s
+REAL(kind=8)::R1,R2,R3									!!!!ç»å…¸è½¬æŠ˜ç‚¹R1ã€R2ã€R3
 REAL(kind=8)::V1,V2,V3	
 CONTAINS
 
@@ -44,7 +44,7 @@ RETURN
 END FUNCTION K
 
 
-!!!!!!!!!!!!!!!!!!!!!¼òÔ¼µÄĞÁÆÕÉ­·¨Çó´©Í¸¸ÅÂÊP!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!ç®€çº¦çš„è¾›æ™®æ£®æ³•æ±‚ç©¿é€æ¦‚ç‡P!!!!!!!!!!!!!!!!!!!
 REAL FUNCTION P_(X2,X3)
 IMPLICIT NONE
 REAL(kind=8)::X2,X3
@@ -60,7 +60,7 @@ RETURN
 END FUNCTION P_
 
 
-!!!!!!!!!!!!!!!!!!!!!¼òÔ¼µÄĞÁÆÕÉ­·¨Çó¹éÒ»»¯Òò×ÓF!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!ç®€çº¦çš„è¾›æ™®æ£®æ³•æ±‚å½’ä¸€åŒ–å› å­F!!!!!!!!!!!!!!!!!!!
 REAL FUNCTION F_(X1,X2)
 IMPLICIT NONE
 REAL(kind=8)::X1,X2
@@ -80,7 +80,7 @@ RETURN
 END FUNCTION F_
 
 
-!!!!!!!!!!!!!!!!!!!!!!!°ëË¥ÆÚT1/2!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!åŠè¡°æœŸT1/2!!!!!!!!!!!!!!!!!!!!!!!
 REAL FUNCTION Thalf_(Pa,F,P)
 REAL(kind=8)::Pa,F,P
 GAma=((c*hbar)*(c*hbar))*Pa*P*F/(4d0*u)
@@ -92,7 +92,7 @@ END MODULE TPA
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Ö÷³ÌĞò!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ä¸»ç¨‹åº!!!!!!!!!!!!!!!!!!!!!!
 PROGRAM main
 USE TPA
 IMPLICIT NONE
@@ -100,15 +100,15 @@ integer,allocatable::ApS(:),ZpS(:)
 real(kind=8),allocatable::LS(:),QaS(:),PaS(:)
 real(kind=8)::X1,X2,iii,VV
 real(kind=8)::Pa,P,F,Thalf,LogThalf
-integer::ii,line=535
+integer::ii,line=47
 allocate(ApS(line),ZpS(line),LS(line),QaS(line),PaS(line))
-open(10,file='BNN_input.txt')
+open(10,file='BNN-Pre_input.txt')
 do ii=1,line
     read(10,*)ApS(ii),ZpS(ii),LS(ii),QaS(ii),PaS(ii)
 enddo
 !write(10,"('Ap=',F13.7/'Zp=',13.8/'L=',F13.9/)")ApS(ii),ZpS(ii),LS(ii),QaS(ii))
 close(10)
-open(11,file='BNN_output.txt')
+open(11,file='BNN-Pre_output.txt')
 write(11,"(3X,'Ap',3X,'Zp',5X,'Qa',10X,'Thalf',12X)")
 do ii=1,line
     Qa=QaS(ii)
@@ -123,8 +123,8 @@ do ii=1,line
     V0=192.42+31.059*(Nd-Zd)/Ad     !V0=194.37+31.059*(Nd-Zd)/Ad
     Rp=1.28*Ap**(1d0/3d0)-0.76+0.8*Ap**(-1d0/3d0)
     u=931.5d0*Ma*Ad/Ap
-    write(*,"('Ä¸ºËÖÊÁ¿Êı£ºAp=',F13.7/'Ä¸ºËÖÊ×ÓÊı£ºZp=',F13.8/'ÊÆ¾®Éî¶È£ºV0=',F13.7/'Ä¸ºË°ë¾¶£ºRp=',F13.9/'ÕÛºÏÖÊÁ¿£ºu=',F18.9/,'Ë¥±äÄÜ£ºQa=',F13.9/,'½Ç¶¯Á¿£º L=',F13.7)")Ap,Zp,V0,Rp,u,Qa,L
-!!!!!!!!!!!!!!!!Çó×ªÕÛµãºÍ¼«µã!!!!!!!!!!!!!!!!!!!!!!!
+    write(*,"('æ¯æ ¸è´¨é‡æ•°ï¼šAp=',F13.7/'æ¯æ ¸è´¨å­æ•°ï¼šZp=',F13.8/'åŠ¿äº•æ·±åº¦ï¼šV0=',F13.7/'æ¯æ ¸åŠå¾„ï¼šRp=',F13.9/'æŠ˜åˆè´¨é‡ï¼šu=',F18.9/,'è¡°å˜èƒ½ï¼šQa=',F13.9/,'è§’åŠ¨é‡ï¼š L=',F13.7)")Ap,Zp,V0,Rp,u,Qa,L
+!!!!!!!!!!!!!!!!æ±‚è½¬æŠ˜ç‚¹å’Œæç‚¹!!!!!!!!!!!!!!!!!!!!!!!
    X1=0d0
    X2=5d0
    R1=(X1+X2)/2d0
@@ -138,8 +138,8 @@ do ii=1,line
          R1=(X1+X2)/2d0
          V1=V(R1)
    enddo
-   write(*,"('µÚÒ»¸ö×ªÕÛµã£º'/'R1=',F13.8)")R1
-   write(*,"('µÚÒ»¸ö×ªÕÛ´¦µÄÊÆÄÜ£º'/'V1=',F13.8)")V1
+   write(*,"('ç¬¬ä¸€ä¸ªè½¬æŠ˜ç‚¹ï¼š'/'R1=',F13.8)")R1
+   write(*,"('ç¬¬ä¸€ä¸ªè½¬æŠ˜å¤„çš„åŠ¿èƒ½ï¼š'/'V1=',F13.8)")V1
    X1=5d0
    X2=15d0
    R2=(X1+X2)/2d0
@@ -153,8 +153,8 @@ do ii=1,line
           R2=(X1+X2)/2d0
           V2=V(R2)
    enddo
-   write(*,"('µÚ¶ş¸ö×ªÕÛµã£º'/'R2=',F13.8)")R2
-   write(*,"('µÚ¶ş¸ö×ªÕÛ´¦µÄÊÆÄÜ£º'/'V2=',F13.8)")V2
+   write(*,"('ç¬¬äºŒä¸ªè½¬æŠ˜ç‚¹ï¼š'/'R2=',F13.8)")R2
+   write(*,"('ç¬¬äºŒä¸ªè½¬æŠ˜å¤„çš„åŠ¿èƒ½ï¼š'/'V2=',F13.8)")V2
    X1=15d0
    X2=120d0
    R3=(X1+X2)/2d0
@@ -168,15 +168,15 @@ do ii=1,line
           R3=(X1+X2)/2d0
           V3=V(R3)
    enddo
-   write(*,"('µÚÈı¸ö×ªÕÛµã£º'/'R3=',F13.8)")R3
-   write(*,"('µÚÈı¸ö×ªÕÛ´¦µÄÊÆÄÜ£º'/'V3=',F13.8)")V3
+   write(*,"('ç¬¬ä¸‰ä¸ªè½¬æŠ˜ç‚¹ï¼š'/'R3=',F13.8)")R3
+   write(*,"('ç¬¬ä¸‰ä¸ªè½¬æŠ˜å¤„çš„åŠ¿èƒ½ï¼š'/'V3=',F13.8)")V3
 
    P=P_(R2,R3)
-   write(*,*)'´©Í¸¸ÅÂÊ:P=',P
+   write(*,*)'ç©¿é€æ¦‚ç‡:P=',P
    F=F_(R1,R2)
-   write(*,*)'¹éÒ»»¯Òò×Ó:F=',F
+   write(*,*)'å½’ä¸€åŒ–å› å­:F=',F
    Thalf=Thalf_(Pa,F,P)
-   write(*,*)'°ëË¥ÆÚ£ºT1/2=',Thalf
+   write(*,*)'åŠè¡°æœŸï¼šT1/2=',Thalf
    LogThalf=log10(Thalf)
    write(11,"(2X,I3,2X,I3,2X,F13.8,2X,E15.6,2X)")&
    &IDINT(Ap),IDINT(Zp),Qa,Thalf   
